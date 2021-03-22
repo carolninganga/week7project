@@ -7,7 +7,7 @@
 # the base string, and
 # the list of rules
 
-def __init__(): #The init function creates an empty L-system and returns it. Using the list representation, an empty L-system is a list with two elements: the empty string and an empty list. 
+def init(): #The init function creates an empty L-system and returns it. Using the list representation, an empty L-system is a list with two elements: the empty string and an empty list. 
     lsys = ['',[]]
     return lsys
 
@@ -32,3 +32,13 @@ def getRule( lsys, index):
     return lsys[1][index]
 
 
+def main():
+    my_lsys = init()
+    setBase( my_lsys, 'A' )
+    addRule( my_lsys, ['A','AB'] )
+    print(my_lsys)
+    print("the base is ", getBase( my_lsys ))
+    print("the first rule is ", getRule( my_lsys, 0 ))
+				
+if __name__ == '__main__':
+    main()
