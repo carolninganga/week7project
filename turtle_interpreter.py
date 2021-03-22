@@ -16,16 +16,21 @@ def drawString(string, dist, angle ):
     """
 
     # assign to stack the empty list
-    stack = {}
+    stack = []
     # for each character d in string 
     for c in string :
         # if d is equal to 'F'
-        if c in string :
+        if c == 'F' :
             # tell the turtle go forward by distance
             t.forward( dist )
-        # else if d is equal to '-'
+        # else if c is equal to '-'
+        elif c == '-':
+            t.right( angle )
         # else if d is equal to '+'
+        elif c == '+':
+            t.left( angle )
         # else if d is equal '['
+        elif c == '[':
             # append to stack the position of the turtle (position method)
             stack.append(t.position())
             # append to stack the heading of the turtle (heading method)
@@ -43,5 +48,18 @@ def drawString(string, dist, angle ):
     # call the turtle.update() (not in the for loop)
     t.update()
 
+def hold():
+    '''Holds the screen open until user clicks or presses 'q' key'''
 
+    # Hide the turtle cursor and update the screen
+    t.hideturtle()
+    t.update()
 
+    # Close the window when users presses the 'q' key
+    t.onkey(t.bye, 'q')
+
+    # Listen for the q button press event
+    t.listen()
+
+    # Have the turtle listen for a click
+    t.exitonclick()
