@@ -16,12 +16,13 @@ def main( argv ):
         exit()
 
     #create the lsystem from a file
-    # draw lysytem1 using createLsytemFromFile()
+    # draw lysytem using createLsytemFromFile()
 
     lsystem = ls.createLsystemFromFile( argv[1] )
+    # lsystem2 = ls.createLsystemFromFile( argv[2] )
+
 
     #build the lysytem from a file using 4 iterations  
-
     lstring = ls.buildString( lsystem, 4)
 
     distance = float( argv[2] ) #distiance to be given by user in the command line 
@@ -40,6 +41,8 @@ def main( argv ):
     t.width()
 
     ti.drawString( lstring, distance, angle )
+    # ti.drawString( lstring, distance, angle )
+
 
     #wait 
     ti.hold()
