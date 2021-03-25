@@ -16,58 +16,59 @@ def main( argv ):
         exit()
 
     #create the lsystem from a file
+    # draw lysytem1 using createLsytemFromFile()
+
     lsystem = ls.createLsystemFromFile( argv[1] )
 
-    #build the lysytem from a file 
+    #build the lysytem from a file using 4 iterations  
+
     lstring = ls.buildString( lsystem, 4)
 
     distance = float( argv[2] ) #distiance to be given by user in the command line 
     angle = float( argv[3] ) #angle to be given by user in the command line
 
     # setup and turn off tracing from turtle 
-    t.setup(400, 400)
+    t.setup(600, 600)
     t.tracer(False)
 
     #draw the lsystem to the shape is oriented up 
     t.left(90)
     t.up()
-    t.goto(-200, 200)
+    t.goto(-100, 100)
     t.down()
     t.color( 'green' )
     t.width()
 
-    it.drawString( lstring, distance, angle )
+    ti.drawString( lstring, distance, angle )
 
     #wait 
-    it.hold()
+    ti.hold()
 
 if __name__ == "__main__":
     main( sys.argv )
 
-# goto function
-def goto(x, y):
-    turtle.up()
-    turtle.goto(x, y)
-    turtle.down()
+# # goto function
+# def goto(x, y):
+#     turtle.up()
+#     turtle.goto(x, y)
+#     turtle.down()
 
-def abstract_image():
+# def abstract_image():
 
-    # draw lysytem1 using createLsytemFromFile()
-    #generate a string using buildString with 3 iterations
-    #position the turtle at (-300, 100)
-    #call draw string with the desired distance and angle
+#     #position the turtle at (-300, 100)
+#     #call draw string with the desired distance and angle
 
-    mylsys = l.init()
+#     mylsys = l.init()
 
 
-    # empty lsystem has [" , and an empty list[]]
-    # components of an L string are a base string and rule
-    l.setBase( mylsys, "F * F")     # base has one string 
-    l.addRule( mylsys, ['F', 'F--F--F']) # rule has two strings ( symbol and replacement )
+#     # empty lsystem has [" , and an empty list[]]
+#     # components of an L string are a base string and rule
+#     l.setBase( mylsys, "F * F")     # base has one string 
+#     l.addRule( mylsys, ['F', 'F--F--F']) # rule has two strings ( symbol and replacement )
 
 
-# drawString function exercutes the turtle goto function and produces the picture
-# representing an L-system 
+# # drawString function exercutes the turtle goto function and produces the picture
+# # representing an L-system 
 # opne the file
 # Read all the lines of the file into a list of strings 
 # chose the file
