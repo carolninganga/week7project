@@ -8,25 +8,25 @@ import turtle as t
 import turtle_interpreter as ti #import turle_interpreter
 
 
+
 def main( argv ):
 
     # check if there are enough arguement s
-    if len ( argv ) < 4:
-        print( "usage: %s < lsystem filename> < distance> < angle>" % ( argv[0]))
-        exit()
+    # if len ( argv ) < 4:
+    #     print( "usage: %s < lsystem filename> < distance> < angle>" % ( argv[0]))
+    #     exit()
 
     #create the lsystem from a file
     # draw lysytem using createLsytemFromFile()
-
-    lsystem = ls.createLsystemFromFile( argv[1] )
-    # lsystem2 = ls.createLsystemFromFile( argv[2] )
+    lsystem1 = ls.createLsystemFromFile( 'systemA3.txt' )
+    lsystem2 = ls.createLsystemFromFile( 'systemA4.txt' )
 
 
     #build the lysytem from a file using 4 iterations  
-    lstring = ls.buildString( lsystem, 4)
+    lstring = ls.buildString( lsystem1, 4)
 
-    distance = float( argv[2] ) #distiance to be given by user in the command line 
-    angle = float( argv[3] ) #angle to be given by user in the command line
+    distance = float( 20 ) #distiance to be given by user in the command line 
+    angle = float( 90 ) #angle to be given by user in the command line
 
     # setup and turn off tracing from turtle 
     t.setup(600, 600)
@@ -35,13 +35,32 @@ def main( argv ):
     #draw the lsystem to the shape is oriented up 
     t.left(90)
     t.up()
-    t.goto(-100, 100)
+    t.goto(-200, 100)
     t.down()
     t.color( 'green' )
     t.width()
 
     ti.drawString( lstring, distance, angle )
     # ti.drawString( lstring, distance, angle )
+
+    lstring2 = ls.buildString( lsystem2, 4)
+
+    distance = float( 50  ) #distiance to be given by user in the command line 
+    angle = float( 90 ) #angle to be given by user in the command line
+
+    # setup and turn off tracing from turtle 
+    t.setup(600, 600)
+    t.tracer(False)
+
+    #draw the lsystem to the shape is oriented up 
+    t.left(90)
+    t.up()
+    t.goto(200, -100)
+    t.down()
+    t.color( 'red' )
+    t.width()
+
+    ti.drawString( lstring2, distance, angle )
 
 
     #wait 
