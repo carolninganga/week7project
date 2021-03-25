@@ -33,9 +33,9 @@ def main():
         for col in range(1,4): #iterates between 1 and 4 
             goto(x,y)
             if col % 3 == 0: # added some color to the first two columns
-                t.color('purple')
+                t.color('green')
             elif col % 1 == 0: # added some color to the other rows
-                t.color('red')
+                t.color('brown')
             lstring = ls.buildString( lsys, col ) #buildString takes in two arguements the lsys and how many times it should iterate given by the value in the inner loop of col
             t.setheading(90) # makes the trees face upwards
             ti.drawString(lstring, 5, listOfAngles[row] ) #draws the strings iterating through the different angles given in the list variable declared above listOfAngles
